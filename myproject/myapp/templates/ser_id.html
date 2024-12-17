@@ -1,0 +1,17 @@
+<form method="get">
+    <input type="text" name="c_id" id="c_id">
+    <button type="submit">ENTER</button>
+</form>
+<h1>COURSE LIST</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+    </tr>
+    {%for course in courses%}
+        <tr>
+            <td>{{course.c_id}}</td>
+            <td>{{course.c_name}}</td>
+        </tr>
+    {%endfor%}
+</table>

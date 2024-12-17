@@ -1,0 +1,14 @@
+<h1>COURSE LIST</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+    </tr>
+    {%for course in courses%}
+        <tr>
+            <td>{{course.c_id}}</td>
+            <td>{{course.c_name}}</td>
+            <td><a href="{%url 'edit' course.c_id%}">EDIT</a></td>
+        </tr>
+    {%endfor%}
+</table>

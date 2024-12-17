@@ -1,0 +1,21 @@
+<form method="get">
+    <input type="text" name="c_id" id="c_id">
+    <button type="submit">ENTER</button>
+</form>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+    </tr>
+    {%for course in courses%}
+        <tr>
+            <td>{{course.c_id}}</td>
+            <td>{{course.c_name}}</td>
+            <td><form method="post">
+                {%csrf_token%}
+                <input type="hidden" name="c_delete" value="{{course.c_id}}">
+                <button type="submit">DELETE</button>
+            </form></td>
+        </tr>
+    {%endfor%}
+</table>
